@@ -44,14 +44,13 @@ columns.forEach((col) => {
         };
       });
 
-      // tasksData is in object form but localStorage store data only in string form so use JSON.stringify
       localStorage.setItem("tasks", JSON.stringify(tasksData));
       count.innerText = tasks.length;
     });
 }
 
 if (localStorage.getItem("tasks")) {
-  // data store in string format so use JSON.parse for convert data string to object
+  
   const data = JSON.parse(localStorage.getItem("tasks"));
 
   for (const col in data) {
